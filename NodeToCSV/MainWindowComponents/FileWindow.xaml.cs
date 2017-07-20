@@ -20,9 +20,37 @@ namespace NodeToCSV.MainWindowComponents
 	/// </summary>
 	public partial class FileWindow : UserControl
 	{
+		public List<Graph> graphs;
+
 		public FileWindow()
 		{
 			InitializeComponent();
+
+			graphs = new List<Graph>();
+			AddTab();
+			UpdateTabsDataContext();
+			Tabs.SelectedIndex = 0;
+		}
+
+		private void UpdateTabsDataContext()
+		{
+			Tabs.DataContext = null;
+			Tabs.DataContext = graphs;
+		}
+
+		public Graph AddTab()
+		{
+			Graph g = new Graph();
+			g.OnCloseButtonPressed += OnGraphCloseButton_Click;
+			graphs.Add(g);
+			UpdateTabsDataContext();
+			return g;
+		}
+
+		private void OnGraphCloseButton_Click(Graph sender)
+		{
+			graphs.Remove(sender);
+			UpdateTabsDataContext();
 		}
 	}
 }

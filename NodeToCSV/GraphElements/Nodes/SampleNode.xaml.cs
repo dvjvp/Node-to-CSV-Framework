@@ -24,5 +24,25 @@ namespace NodeToCSV.GraphElements.Nodes
 		{
 			InitializeComponent();
 		}
+
+		public override void LoadFromDataRow(Files.DataStruct dataRow)
+		{
+			throw new NotImplementedException();
+		}
+
+		public override Files.DataStruct ToSaveFileDataRow()
+		{
+			throw new NotImplementedException();
+		}
+
+		public override Files.DataStruct ToExportFileDataRow()
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool IsAmbientPropertyAvailable(string propertyName)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

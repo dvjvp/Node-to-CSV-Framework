@@ -17,7 +17,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Label x:Name="Title" Grid.Column="0">New file</Label>
-                <Button Content="✖" Grid.Column="1">
+                <Button x:Name="ClosingButton" Content="✖" Grid.Column="1" Click="ClosingButton_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Visibility" Value="Hidden"/>

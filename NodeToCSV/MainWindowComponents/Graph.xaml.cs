@@ -20,9 +20,17 @@ namespace NodeToCSV.MainWindowComponents
 	/// </summary>
 	public partial class Graph : TabItem
 	{
+		public delegate void CloseTabEvent(Graph sender);
+		public event CloseTabEvent OnCloseButtonPressed;
+
 		public Graph()
 		{
 			InitializeComponent();
+		}
+
+		private void ClosingButton_Click(object sender, RoutedEventArgs e)
+		{
+			OnCloseButtonPressed?.Invoke(this);
 		}
 	}
 }
