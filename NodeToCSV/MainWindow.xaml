@@ -18,7 +18,7 @@
         <mainwindow:Toolbar Grid.Row="0"/>
 
         <!-- MAIN WINDOW PART -->
-        <mainwindow:FileWindow Grid.Row="1"/>
+        <mainwindow:FileWindow Grid.Row="1" Background="BlueViolet"/>
 
         <!-- STATUS BAR AT THE BOTTOM -->
         <Grid Grid.Row="2" Background="BlueViolet">

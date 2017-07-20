@@ -66,7 +66,7 @@
         </Grid.Resources>
         
         
-        <TabControl>
+        <TabControl Background="BlueViolet">
             <TabItem Header="File">
                 <toolbar:FileTab/>
             </TabItem>
@@ -88,7 +88,7 @@
             <TabItem Header="Help">
                 
             </TabItem>
-            <TabItem Header="Hide tabs"/>
+            <TabItem Header="Hide tabs" Background="BlueViolet"/>
 
         </TabControl>
     </Grid>

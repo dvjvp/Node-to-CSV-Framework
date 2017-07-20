@@ -7,6 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TabControl x:Name="Tabs"/>
+        <TabControl x:Name="Tabs">
+            <local:Graph/>
+            <local:Graph/>
+        </TabControl>
     </Grid>
 </UserControl>

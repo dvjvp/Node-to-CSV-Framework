@@ -71,6 +71,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MainWindowComponents\Graph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindowComponents\Toolbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +87,9 @@
   <ItemGroup>
     <Compile Include="MainWindowComponents\FileWindow.xaml.cs">
       <DependentUpon>FileWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowComponents\Graph.xaml.cs">
+      <DependentUpon>Graph.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowComponents\Toolbar.xaml.cs">
       <DependentUpon>Toolbar.xaml</DependentUpon>
