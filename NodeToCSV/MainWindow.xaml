@@ -1,0 +1,32 @@
+﻿<Window x:Class="NodeToCSV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NodeToCSV"
+        xmlns:mainwindow="clr-namespace:NodeToCSV.MainWindowComponents"
+        mc:Ignorable="d"
+        Title="Node editor" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <!-- TOOLBAR -->
+        <mainwindow:Toolbar Grid.Row="0"/>
+
+        <!-- MAIN WINDOW PART -->
+        <mainwindow:FileWindow Grid.Row="1"/>
+
+        <!-- STATUS BAR AT THE BOTTOM -->
+        <Grid Grid.Row="2" Background="BlueViolet">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="StatusLabel" Grid.Column="0" Foreground="White" Content="Ready "/>
+        </Grid>
+    </Grid>
+</Window>
