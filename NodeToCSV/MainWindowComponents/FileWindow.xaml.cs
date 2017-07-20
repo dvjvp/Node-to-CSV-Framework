@@ -47,6 +47,15 @@ namespace NodeToCSV.MainWindowComponents
 			return g;
 		}
 
+		public Graph GetOpenTab()
+		{
+			if(graphs.Any() == false)
+			{
+				return null;
+			}
+			return (Graph)Tabs.SelectedItem;
+		}
+
 		private void OnGraphCloseButton_Click(Graph sender)
 		{
 			graphs.Remove(sender);
