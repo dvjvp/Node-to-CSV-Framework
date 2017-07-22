@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NodeToCSV.MainWindowComponents.CustomControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,15 @@ namespace NodeToCSV.MainWindowComponents
 	public partial class FileWindow : UserControl
 	{
 		public List<Graph> graphs;
+		public List<TabItemWithCloseButton> tabs;
 
 		public FileWindow()
 		{
 			InitializeComponent();
 
 			graphs = new List<Graph>();
+			tabs = new List<TabItemWithCloseButton>();
+			AddTab();
 			AddTab();
 			UpdateTabsDataContext();
 			Tabs.SelectedIndex = 0;
@@ -34,15 +38,21 @@ namespace NodeToCSV.MainWindowComponents
 
 		private void UpdateTabsDataContext()
 		{
+			Tabs.ItemsSource = null;
 			Tabs.DataContext = null;
-			Tabs.DataContext = graphs;
+			Tabs.ItemsSource = tabs;
+			Tabs.DataContext = tabs;
+
 		}
 
 		public Graph AddTab()
 		{
 			Graph g = new Graph();
-			g.OnCloseButtonPressed += OnGraphCloseButton_Click;
+			TabItemWithCloseButton t = new TabItemWithCloseButton();
+			t.Content = g;
+			t.OnCloseButtonPressed += OnGraphCloseButton_Click;
 			graphs.Add(g);
+			tabs.Add(t);
 			UpdateTabsDataContext();
 			return g;
 		}
@@ -53,13 +63,19 @@ namespace NodeToCSV.MainWindowComponents
 			{
 				return null;
 			}
-			return (Graph)Tabs.SelectedItem;
+			return (Graph)(Tabs.SelectedItem as TabItemWithCloseButton).Content;
 		}
 
-		private void OnGraphCloseButton_Click(Graph sender)
+		private void OnGraphCloseButton_Click(TabItemWithCloseButton sender)
 		{
-			graphs.Remove(sender);
+			graphs.Remove(sender.Content as Graph);
+			tabs.Remove(sender);
 			UpdateTabsDataContext();
+			if ((Tabs.SelectedIndex >= tabs.Count || Tabs.SelectedIndex < 0)
+				&& (tabs.Count > 0))
+			{
+				Tabs.SelectedIndex = (tabs.Count - 1);
+			}
 		}
 	}
 }

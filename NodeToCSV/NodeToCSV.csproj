@@ -123,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MainWindowComponents\CustomControls\TabItemWithCloseButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindowComponents\FileWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -152,6 +156,9 @@
       <DependentUpon>ButtonWithImage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowComponents\CustomControls\GreyableImage.cs" />
+    <Compile Include="MainWindowComponents\CustomControls\TabItemWithCloseButton.xaml.cs">
+      <DependentUpon>TabItemWithCloseButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindowComponents\FileWindow.xaml.cs">
       <DependentUpon>FileWindow.xaml</DependentUpon>
     </Compile>

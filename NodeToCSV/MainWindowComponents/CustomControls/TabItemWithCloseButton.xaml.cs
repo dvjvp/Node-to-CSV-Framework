@@ -13,18 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NodeToCSV.MainWindowComponents
+namespace NodeToCSV.MainWindowComponents.CustomControls
 {
 	/// <summary>
-	/// Interaction logic for Graph.xaml
+	/// Interaction logic for TabItemWithCloseButton.xaml
 	/// </summary>
-	public partial class Graph : UserControl
+	public partial class TabItemWithCloseButton : TabItem
 	{
+		public delegate void CloseTabEvent(TabItemWithCloseButton sender);
+		public event CloseTabEvent OnCloseButtonPressed;
 
-		public Graph()
+		public TabItemWithCloseButton()
 		{
 			InitializeComponent();
 		}
 
+
+		private void ClosingButton_Click(object sender, RoutedEventArgs e)
+		{
+			OnCloseButtonPressed?.Invoke(this);
+		}
 	}
 }

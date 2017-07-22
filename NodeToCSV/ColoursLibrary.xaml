@@ -3,13 +3,22 @@
                     xmlns:local="clr-namespace:NodeToCSV">
     
     <!-- PRIMARY APPLICATION COLORS -->
-    <SolidColorBrush x:Key="PrimaryAppColor" Color="BlueViolet"/>
-    <SolidColorBrush x:Key="ButtonsBackgroundColor" Color="LightBlue"/>
+    <SolidColorBrush x:Key="PrimaryAppColor" Color="MediumPurple"/>
     <SolidColorBrush x:Key="PrimaryTextColor" Color="White"/>
+    
+    <!-- BUTTON COLORS -->
+    <SolidColorBrush x:Key="ButtonsBackgroundColor" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="ButtonsMouseOverColor" Color="LightSkyBlue"/>
+    <SolidColorBrush x:Key="ButtonsTextColor" Color="White"/>
 
     <!-- TAB COLORS -->
     <SolidColorBrush x:Key="SelectedTabColor" Color="CornFlowerBlue"/>
     <SolidColorBrush x:Key="HoveredTabColor" Color="Azure"/>
     <SolidColorBrush x:Key="DisabledTabColor" Color="LightGray"/>
+
+    <!-- GRID COLORS -->
+    <SolidColorBrush x:Key="GridBackgroundColor" Color="#FF6F6F6F"/>
+    <SolidColorBrush x:Key="GridPrimaryLinesColor" Color="#FF646464"/>
+    <SolidColorBrush x:Key="GridSecondaryLinesColor" Color="#FF5f5f5f"/>
 
 </ResourceDictionary>
