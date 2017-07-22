@@ -20,5 +20,6 @@
     <SolidColorBrush x:Key="GridBackgroundColor" Color="#FF6F6F6F"/>
     <SolidColorBrush x:Key="GridPrimaryLinesColor" Color="#FF646464"/>
     <SolidColorBrush x:Key="GridSecondaryLinesColor" Color="#FF5f5f5f"/>
+    <Rect x:Key="GridTileSize" X="0" Y="0" Width="128" Height="128"/>
 
 </ResourceDictionary>

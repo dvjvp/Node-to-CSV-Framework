@@ -18,7 +18,7 @@
 
             <Canvas x:Name="BackgroundCanvas">
                 <Canvas.Background>
-                    <DrawingBrush Viewport="0,0,128,128" ViewportUnits="Absolute" TileMode="Tile">
+                    <DrawingBrush Viewport="{StaticResource GridTileSize}" ViewportUnits="Absolute" TileMode="Tile">
                         <DrawingBrush.Drawing>
                             <DrawingGroup>
                                 <GeometryDrawing Brush="{StaticResource GridBackgroundColor}">
