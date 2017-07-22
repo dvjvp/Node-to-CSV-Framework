@@ -147,6 +147,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MainWindowComponents\ToolbarComponents\LayoutTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowComponents\ToolbarComponents\NodeTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowComponents\ToolbarComponents\SelectionTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowComponents\CustomControls\ButtonWithGreyableImage.xaml.cs">
@@ -173,6 +185,15 @@
     </Compile>
     <Compile Include="MainWindowComponents\ToolbarComponents\FileTab.xaml.cs">
       <DependentUpon>FileTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowComponents\ToolbarComponents\LayoutTab.xaml.cs">
+      <DependentUpon>LayoutTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowComponents\ToolbarComponents\NodeTab.xaml.cs">
+      <DependentUpon>NodeTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowComponents\ToolbarComponents\SelectionTab.xaml.cs">
+      <DependentUpon>SelectionTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

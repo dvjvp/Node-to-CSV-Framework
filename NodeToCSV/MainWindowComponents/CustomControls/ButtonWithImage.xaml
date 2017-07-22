@@ -13,8 +13,9 @@
                        Width="{Binding ElementName=UC, Path=ImageWidth}"
                        Height="{Binding ElementName=UC, Path=ImageHeight}"/>
             <TextBlock Text="{Binding ElementName=UC, Path=Text}"
-                           Margin="0,0,0,0" HorizontalAlignment="Center"
+                           Margin="0,5,0,0" HorizontalAlignment="Center"
                        LineStackingStrategy="BlockLineHeight" TextWrapping="Wrap"
+                       LineHeight="10" VerticalAlignment="Center"
                        Foreground="{StaticResource ButtonsTextColor}"/>
         </StackPanel>
     </Button>
