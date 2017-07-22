@@ -18,10 +18,10 @@
         <mainwindow:Toolbar Grid.Row="0"/>
 
         <!-- MAIN WINDOW PART -->
-        <mainwindow:FileWindow Grid.Row="1" Background="BlueViolet"/>
+        <mainwindow:FileWindow Grid.Row="1" Background="{StaticResource PrimaryAppColor}"/>
 
         <!-- STATUS BAR AT THE BOTTOM -->
-        <Grid Grid.Row="2" Background="BlueViolet">
+        <Grid Grid.Row="2" Background="{StaticResource PrimaryAppColor}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>

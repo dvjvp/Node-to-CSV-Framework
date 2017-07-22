@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:NodeToCSV">
+    
+    <!-- PRIMARY APPLICATION COLORS -->
+    <SolidColorBrush x:Key="PrimaryAppColor" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="ButtonsBackgroundColor" Color="LightBlue"/>
+    <SolidColorBrush x:Key="PrimaryTextColor" Color="White"/>
+
+    <!-- TAB COLORS -->
+    <SolidColorBrush x:Key="SelectedTabColor" Color="CornFlowerBlue"/>
+    <SolidColorBrush x:Key="HoveredTabColor" Color="Azure"/>
+    <SolidColorBrush x:Key="DisabledTabColor" Color="LightGray"/>
+
+</ResourceDictionary>

@@ -74,6 +74,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ColoursLibrary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GraphElements\Nodes\NodeElements\InputPin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

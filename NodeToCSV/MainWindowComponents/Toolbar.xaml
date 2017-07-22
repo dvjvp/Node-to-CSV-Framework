@@ -7,18 +7,18 @@
              xmlns:toolbar="clr-namespace:NodeToCSV.MainWindowComponents.ToolbarComponents"
              mc:Ignorable="d" 
              d:DesignHeight="120" d:DesignWidth="600">
-    <Grid Background="BlueViolet">
+    <Grid Background="{StaticResource PrimaryAppColor}">
         <!-- SET STYLES FOR CHILDREN ELEMENTS -->
         <Grid.Resources>
             <Style TargetType="Button">
                 <Setter Property="Margin" Value="2.5"/>
-                <Setter Property="Background" Value="LightBlue"/>
+                <Setter Property="Background" Value="{StaticResource ButtonsBackgroundColor}"/>
             </Style>
 
             <Style TargetType="TabItem">
-                <Setter Property="Background" Value="BlueViolet"/>
+                <Setter Property="Background" Value="{StaticResource PrimaryAppColor}"/>
                 <!-- INACTIVE TAB -->
-                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}"/>
                 <!-- OTHERS -->
                 <Setter Property="Template">
                     <Setter.Value>
@@ -42,12 +42,12 @@
                                 <!-- ACTIVE TAB -->
                                 <Trigger Property="IsSelected" Value="True">
                                     <Setter Property="Panel.ZIndex" Value="100"/>
-                                    <Setter TargetName="Border" Property="Background" Value="CornFlowerBlue"/>
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource SelectedTabColor}"/>
                                     <Setter Property="Foreground" Value="White"/>
                                 </Trigger>
                                 <!-- DISABLED TAB -->
                                 <Trigger Property="IsEnabled" Value="False">
-                                    <Setter TargetName="Border" Property="Background" Value="LightGray"/>
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledTabColor}"/>
                                     <Setter Property="Foreground" Value="White"/>
                                 </Trigger>
                                 <!-- INACTIVE TAB WHEN MOUSE OVER -->
@@ -56,7 +56,7 @@
                                         <Condition Property="IsMouseOver" Value="True" SourceName="Border"/>
                                         <Condition Property="IsSelected" Value="False"/>
                                     </MultiTrigger.Conditions> 
-                                    <Setter TargetName="Border" Property="Background" Value="LightSkyBlue"/>
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource HoveredTabColor}"/>
                                 </MultiTrigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -66,7 +66,7 @@
         </Grid.Resources>
         
         
-        <TabControl Background="BlueViolet">
+        <TabControl Background="{StaticResource PrimaryAppColor}">
             <TabItem Header="File">
                 <toolbar:FileTab/>
             </TabItem>
@@ -88,7 +88,7 @@
             <TabItem Header="Help">
                 
             </TabItem>
-            <TabItem Header="Hide tabs" Background="BlueViolet"/>
+            <TabItem Header="Hide tabs" Background="{StaticResource PrimaryAppColor}"/>
 
         </TabControl>
     </Grid>

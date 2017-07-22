@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:NodeToCSV"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="ColoursLibrary.xaml"/>
     </Application.Resources>
 </Application>
