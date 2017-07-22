@@ -71,7 +71,7 @@
                 <toolbar:FileTab/>
             </TabItem>
             <TabItem Header="Edit">
-
+                <toolbar:EditTab/>
             </TabItem>
             <TabItem Header="Node">
 

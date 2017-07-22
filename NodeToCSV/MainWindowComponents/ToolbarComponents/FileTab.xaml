@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:NodeToCSV.MainWindowComponents.ToolbarComponents"
              xmlns:controls="clr-namespace:NodeToCSV.MainWindowComponents.CustomControls"
              mc:Ignorable="d" 
-             d:DesignHeight="80" d:DesignWidth="600">
+             d:DesignHeight="80" d:DesignWidth="800">
     <Grid Height="80">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80"/>
@@ -16,16 +16,29 @@
             <ColumnDefinition Width="80"/>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="80"/>
             
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="0" ToolTip="Save dialogue as new CSV file">
-            <StackPanel>
-                <Image Width="40"/>
-                <TextBlock HorizontalAlignment="Center">Save As</TextBlock>
-            </StackPanel>
-        </Button>
-        <controls:ButtonWithImage Grid.Column="1"/>
+        <controls:ButtonWithImage Grid.Column="0" ButtonBase.Click="ButtonWithImage_Click" Text="New" ToolTip="Create new empty file"
+                                  Image="/NodeToCSV;component/Resources/Buttons/File/New.png"/>
+        <controls:ButtonWithImage Grid.Column="1" ButtonBase.Click="ButtonWithImage_Click" Text="Open" ToolTip="Open selected file from your drive"
+                                  Image="/NodeToCSV;component/Resources/Buttons/File/Open.png"/>
+        <controls:ButtonWithImage Grid.Column="2" ButtonBase.Click="ButtonWithImage_Click" Text="Save" ToolTip="Save current file"
+                                  Image="/NodeToCSV;component/Resources/Buttons/File/Save.png"/>
+        <controls:ButtonWithImage Grid.Column="3" ButtonBase.Click="ButtonWithImage_Click" Text="Save As" ToolTip="Save current file with specified filename"
+                                  Image="/NodeToCSV;component/Resources/Buttons/File/SaveAs.png"/>
+        <controls:ButtonWithImage Grid.Column="4" ButtonBase.Click="ButtonWithImage_Click" Text="Reload" ToolTip="Close, then open current file"
+                                  Image="/NodeToCSV;component/Resources/Buttons/File/Reload.png"/>
+
+
+        <controls:ButtonWithImage Grid.Column="6" ButtonBase.Click="ButtonWithImage_Click" Text="Export" ToolTip="Export current file to *.CSV, that can be imported in Unreal Engine 4 as Data Table"
+                                  Image="/NodeToCSV;component/Resources/Buttons/File/Export.png"/>
+        <controls:ButtonWithImage Grid.Column="8" ButtonBase.Click="ButtonWithImage_Click" Text="Autosaves" ToolTip="Open folder containing autosaves, so you can restore unsaved changes"
+                                  Image="/NodeToCSV;component/Resources/Buttons/File/OpenAutosave.png"/>
+
+
     </Grid>
 </UserControl>

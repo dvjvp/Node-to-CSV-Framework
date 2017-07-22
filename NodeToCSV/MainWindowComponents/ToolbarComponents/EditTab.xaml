@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="NodeToCSV.MainWindowComponents.ToolbarComponents.EditTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NodeToCSV.MainWindowComponents.ToolbarComponents"
+             xmlns:controls="clr-namespace:NodeToCSV.MainWindowComponents.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="800">
+    <Grid Height="80">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="80"/>
+
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <controls:ButtonWithImage Grid.Column="0" Text="Undo" ToolTip="Undo last action"
+                                  Image="/NodeToCSV;component/Resources/Buttons/Undo.png"/>
+        <controls:ButtonWithImage Grid.Column="1" Text="Redo" ToolTip="Revert undoing last action"
+                                  Image="/NodeToCSV;component/Resources/Buttons/Redo.png"/>
+
+        <controls:ButtonWithImage Grid.Column="3" Text="Copy" ToolTip="Copy selected nodes to buffer as text"
+                                  Image="/NodeToCSV;component/Resources/Buttons/Edit/Copy.png"/>
+        <controls:ButtonWithImage Grid.Column="4" Text="Paste" ToolTip="Paste copied nodes from buffer to the exact place they were copied from"
+                                  Image="/NodeToCSV;component/Resources/Buttons/Edit/Paste.png"/>
+
+        <controls:ButtonWithImage Grid.Column="6" Text="Search" ToolTip="Open window with various options allowing for searching through and jumping to different parts of graph"
+                                  Image="/NodeToCSV;component/Resources/Buttons/Edit/Filter.png"/>
+
+
+    </Grid>
+</UserControl>

@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace NodeToCSV.MainWindowComponents.ToolbarComponents
 {
 	/// <summary>
-	/// Interaction logic for FileTab.xaml
+	/// Interaction logic for EditTab.xaml
 	/// </summary>
-	public partial class FileTab : UserControl
+	public partial class EditTab : UserControl
 	{
-		public FileTab()
+		public EditTab()
 		{
 			InitializeComponent();
-		}
-
-		private void ButtonWithImage_Click(object sender, RoutedEventArgs e)
-		{
-			Console.WriteLine("CLICK0");
 		}
 	}
 }
