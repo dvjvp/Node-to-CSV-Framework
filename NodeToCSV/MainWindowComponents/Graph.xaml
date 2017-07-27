@@ -8,53 +8,55 @@
              d:DesignHeight="600" d:DesignWidth="600">
 
     <Grid>
-        <Grid x:Name="CanvasContainer">
-            <Grid.LayoutTransform>
-                <TransformGroup x:Name="TotalTransform">
-                    <ScaleTransform x:Name="GraphScale"/>
-                    <TranslateTransform x:Name="GraphTranslation"/>
-                </TransformGroup>
-            </Grid.LayoutTransform>
+        <Border x:Name="ViewportBorders" BorderBrush="Black" BorderThickness="1" ClipToBounds="True">
+            <Grid x:Name="CanvasContainer">
+                <Grid.LayoutTransform>
+                    <TransformGroup x:Name="TotalTransform">
+                        <ScaleTransform x:Name="GraphScale"/>
+                        <TranslateTransform x:Name="GraphTranslation"/>
+                    </TransformGroup>
+                </Grid.LayoutTransform>
 
-            <Canvas x:Name="BackgroundCanvas">
-                <Canvas.Background>
-                    <DrawingBrush Viewport="{StaticResource GridTileSize}" ViewportUnits="Absolute" TileMode="Tile">
-                        <DrawingBrush.Drawing>
-                            <DrawingGroup>
-                                <GeometryDrawing Brush="{StaticResource GridBackgroundColor}">
-                                    <GeometryDrawing.Geometry>
-                                        <RectangleGeometry Rect="0,0,1,1"/>
-                                    </GeometryDrawing.Geometry>
-                                </GeometryDrawing>
-                                <GeometryDrawing>
-                                    <GeometryDrawing.Pen>
-                                        <Pen Thickness=".015" Brush="{StaticResource GridSecondaryLinesColor}"/>
-                                    </GeometryDrawing.Pen>
-                                    <GeometryDrawing.Geometry>
-                                        <GeometryGroup>
-                                            <LineGeometry StartPoint="0,0.2" EndPoint="1,0.2"/>
-                                            <LineGeometry StartPoint="0,0.4" EndPoint="1,0.4"/>
-                                            <LineGeometry StartPoint="0,0.6" EndPoint="1,0.6"/>
-                                            <LineGeometry StartPoint="0,0.8" EndPoint="1,0.8"/>
-                                            <LineGeometry StartPoint="0.2,0" EndPoint="0.2,1"/>
-                                            <LineGeometry StartPoint="0.4,0" EndPoint="0.4,1"/>
-                                            <LineGeometry StartPoint="0.6,0" EndPoint="0.6,1"/>
-                                            <LineGeometry StartPoint="0.8,0" EndPoint="0.8,1"/>
-                                        </GeometryGroup>
-                                    </GeometryDrawing.Geometry>
-                                </GeometryDrawing>
+                <Canvas x:Name="BackgroundCanvas" MouseDown="StartPanCanvas" MouseUp="EndPanCanvas" MouseWheel="ZoomCanvasToMouseOrFromCenter">
+                    <Canvas.Background>
+                        <DrawingBrush Viewport="{StaticResource GridTileSize}" ViewportUnits="Absolute" TileMode="Tile">
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="{StaticResource GridBackgroundColor}">
+                                        <GeometryDrawing.Geometry>
+                                            <RectangleGeometry Rect="0,0,1,1"/>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                    <GeometryDrawing>
+                                        <GeometryDrawing.Pen>
+                                            <Pen Thickness=".015" Brush="{StaticResource GridSecondaryLinesColor}"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <GeometryGroup>
+                                                <LineGeometry StartPoint="0,0.2" EndPoint="1,0.2"/>
+                                                <LineGeometry StartPoint="0,0.4" EndPoint="1,0.4"/>
+                                                <LineGeometry StartPoint="0,0.6" EndPoint="1,0.6"/>
+                                                <LineGeometry StartPoint="0,0.8" EndPoint="1,0.8"/>
+                                                <LineGeometry StartPoint="0.2,0" EndPoint="0.2,1"/>
+                                                <LineGeometry StartPoint="0.4,0" EndPoint="0.4,1"/>
+                                                <LineGeometry StartPoint="0.6,0" EndPoint="0.6,1"/>
+                                                <LineGeometry StartPoint="0.8,0" EndPoint="0.8,1"/>
+                                            </GeometryGroup>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
 
-                                <GeometryDrawing Geometry="M0,0 L1,0 1,0.05, 0,0.05Z" Brush="{StaticResource GridPrimaryLinesColor}" />
-                                <GeometryDrawing Geometry="M0,0 L0,1 0.05,1, 0.05,0Z" Brush="{StaticResource GridPrimaryLinesColor}" />
-                            </DrawingGroup>
-                        </DrawingBrush.Drawing>
-                    </DrawingBrush>
-                </Canvas.Background>
-            </Canvas>
-            <Canvas x:Name="ForegroundCanvas"/>
-            <Canvas x:Name="OverlayCanvas"/>
+                                    <GeometryDrawing Geometry="M0,0 L1,0 1,0.05, 0,0.05Z" Brush="{StaticResource GridPrimaryLinesColor}" />
+                                    <GeometryDrawing Geometry="M0,0 L0,1 0.05,1, 0.05,0Z" Brush="{StaticResource GridPrimaryLinesColor}" />
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Canvas.Background>
+                </Canvas>
+                <Canvas x:Name="ForegroundCanvas"/>
+                <Canvas x:Name="OverlayCanvas"/>
 
-        </Grid>
+            </Grid>
+        </Border>
     </Grid>
 
 </UserControl>
