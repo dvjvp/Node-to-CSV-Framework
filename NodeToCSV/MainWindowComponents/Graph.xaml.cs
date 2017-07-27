@@ -25,19 +25,7 @@ namespace NodeToCSV.MainWindowComponents
 		public Graph()
 		{
 			InitializeComponent();
-
-			//SetCanvasSizeToInfinity();
-		}
-
-		private void SetCanvasSizeToInfinity()
-		{
-			double infinity = 99999999999;
-
-
-			CanvasContainer.Width = infinity;
-			CanvasContainer.Height = infinity;
-			BackgroundCanvas.Width = infinity;
-			BackgroundCanvas.Height = infinity;
+			
 		}
 
 		#region Transform utility
@@ -98,26 +86,33 @@ namespace NodeToCSV.MainWindowComponents
 				return;
 			}
 
+			BackgroundCanvas.CaptureMouse();
+
 			panCanvasInProgress = true;
-			panCanvasStartingMousePosition = e.GetPosition(CanvasContainer);
+			panCanvasStartingMousePosition = e.GetPosition(this);
 			panCavasStartingTranslation = new Point(GraphTranslation.X, GraphTranslation.Y);
 
 			CanvasContainer.MouseMove += PanCanvas_MouseMoved;
-			CanvasContainer.Cursor = Cursors.SizeAll;
+			CanvasContainer.Cursor = Cursors.ScrollAll;
 		}
 
 		private void PanCanvas_MouseMoved(object sender, MouseEventArgs e)
 		{
-			Vector totalCursorMovement = e.GetPosition(CanvasContainer) - panCanvasStartingMousePosition;
+			Vector totalCursorMovement = e.GetPosition(this) - panCanvasStartingMousePosition;
 			SetCanvasPosition(panCavasStartingTranslation + totalCursorMovement);
 		}
 
 		private void EndPanCanvas(object sender, MouseButtonEventArgs e)
 		{
-			panCanvasInProgress = false;
+			if(panCanvasInProgress)
+			{
+				BackgroundCanvas.ReleaseMouseCapture();
 
-			CanvasContainer.MouseMove -= PanCanvas_MouseMoved;
-			CanvasContainer.Cursor = Cursors.Arrow;
+				panCanvasInProgress = false;
+
+				CanvasContainer.MouseMove -= PanCanvas_MouseMoved;
+				CanvasContainer.Cursor = Cursors.Arrow;
+			}
 		}
 
 		#endregion
