@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NodeToCSV.Files;
+using NodeToCSV.GraphElements;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +30,20 @@ namespace NodeToCSV.MainWindowComponents
 			
 		}
 
+
+		public NodeBase CreateNode(DataStruct data)
+		{
+			NodeBase node;
+
+
+			throw new NotImplementedException();
+
+
+			node.LoadFromDataRow(data);
+			ForegroundCanvas.Children.Add(node);
+			return node;
+		}
+
 		#region Transform utility
 
 		public Point ViewCenter
@@ -35,7 +51,7 @@ namespace NodeToCSV.MainWindowComponents
 			get
 			{
 				return TotalTransform.Inverse.Transform(
-					new Point(ViewportBorders.ActualWidth, ViewportBorders.ActualHeight));
+					new Point(ViewportBorders.ActualWidth / 2, ViewportBorders.ActualHeight / 2));
 			}
 		}
 
